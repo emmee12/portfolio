@@ -553,6 +553,10 @@
       margin-top: 2rem;
     }
 
+    .skills-grid .skill-card:last-child {
+  grid-column: 1 / -1;
+}
+
     .skill-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
@@ -757,10 +761,10 @@
     <div class="hero-text">
       <div class="hero-badge">✨ Information Science Senior @ UMD • GPA 4.0</div>
       <h1 class="hero-title">
-        Bridging data insights with <span class="serif-accent">unique UX/UI design.</span>
+        Aiming to combine data insights with <span class="serif-accent"> UX/UI design.</span>
       </h1>
       <p class="hero-description">
-        Hi! I'm Emi-Noel Epolle-Njabe, an Information Science student and AWS Certified Cloud Practitioner. I specialize in finding pattern anomalies in data and building human centered, UX/UI interfaces to solve real world system challenges.
+        Hi! I'm Emi-Noel Epolle-Njabe, an Information Science student and AWS Certified Cloud Practitioner. I focus on finding pattern anomalies in data and building human centered, UX/UI interfaces to solve real world system challenges.
       </p>
       <div class="hero-actions">
         <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -782,7 +786,7 @@
   <section id="about" class="container">
     <h2 class="section-title">About Me</h2>
     <p style="color: var(--text-muted); max-width: 840px; font-size: 1.05rem; line-height: 1.8;">
-       An Information Science senior at the University of Maryland (GPA 4.0) and a AWS Certified Cloud Practitioner, my passion is a combination of Data Analytics and UX/UI Design. I love working with complex datasets to discover hidden patterns, simplify workflows, and translate raw data into clean, interactive visual dashboards and unique digital user interfaces.
+       An Information Science senior at the University of Maryland and a AWS Certified Cloud Practitioner, my passion is a combination of Data Analytics and UX/UI Design. I love working with complex datasets to discover hidden patterns, simplify workflows, and translate raw data into clean, interactive visual dashboards and unique digital user interfaces.
     </p>
 
     <div class="stats-grid">
@@ -817,7 +821,7 @@
         <div class="project-info">
           <h3 class="project-title">RF Signal Monitoring Dashboard</h3>
           <p class="project-desc">
-            Automated cloud ETL solution that processes complex telecommunications logs to uncover signal drop patterns and evaluate critical network performance.
+            Automated cloud ETL (Extract, Transform, Load) solution that processes complex telecommunications logs to uncover signal drop patterns and evaluate critical network performance.
           </p>
           <ul class="project-bullet-highlights">
             <li>Structured raw telecommunication CSV logs via AWS S3 & Glue Crawlers</li>
@@ -833,7 +837,7 @@
           </div>
           <button class="project-link open-modal" 
                   data-title="RF Signal MonitoringDashboard" 
-                  data-details="Engineered an end-to-end cloud diagnostics pipeline to evaluate public safety radio network reliability. By setting up automated schema crawlers with AWS Glue and running targeted Athena SQL queries on S3 logs, I identified pattern drop-offs in RF signal strength and audio quality (DAQ). Visualized findings in QuickSight for key stakeholders to optimize emergency network operations.">
+                  data-details="Engineered an end to end cloud diagnostics pipeline to evaluate public safety radio network reliability. By setting up automated schema crawlers with AWS Glue and running targeted Athena SQL queries on S3 logs, I identified pattern drop offs in RF signal strength and audio quality (DAQ). Visualized findings in QuickSight for key stakeholders to simply view emergency network operations.">
             Explore Architecture Details &rarr;
           </button>
         </div>
@@ -848,7 +852,7 @@
         <div class="project-info">
           <h3 class="project-title">Maryland Higher Education Transfer Analytics Pipeline</h3>
           <p class="project-desc">
-            Automated cloud data pipeline built to ingest, clean, normalize, and analyze state-level higher education transfer student metrics.
+            Automated cloud data pipeline built to ingest, clean, normalize, and analyze state level higher education transfer student metrics.
           </p>
           <ul class="project-bullet-highlights">
             <li>Ingested and standardized raw USM IRIS export datasets using Python Pandas</li>
@@ -879,12 +883,12 @@
         <div class="project-info">
           <h3 class="project-title">User Centered Interactive System Design</h3>
           <p class="project-desc">
-            Comprehensive UX design project focused on user research, task-flow pattern analysis, and creating unique interface design systems.
+            Comprehensive UX design project focused on user research, task flow pattern analysis, and creating unique interface design systems.
           </p>
           <ul class="project-bullet-highlights">
             <li>Conducted user friction research to identify usability pain points</li>
             <li>Designed low to high fidelity interactive wireframes and prototypes</li>
-            <li>Created custom nude/pink aesthetic visual design systems in Figma</li>
+            <li>Created custom pink (of course) aesthetic visual design systems in Figma</li>
           </ul>
           <div class="project-tags">
             <span class="tag">UX Architecture</span>
@@ -895,7 +899,7 @@
           </div>
           <button class="project-link open-modal" 
                   data-title="User-Centered Interactive System Design" 
-                  data-details="Focused on transforming complex system data into user friendly digital experiences. Applied User Centered Design (UCD) methodologies—including persona creation, journey mapping, and wireframing to eliminate usability roadblocks and deliver a streamlined, aesthetic visual interface tailored to user behavior patterns.">
+                  data-details="Focused on transforming complex system data into user friendly digital experiences. Applied User Centered Design (UCD) methodologies; including persona creation, journey mapping, and wireframing to eliminate usability roadblocks and deliver a streamlined, aesthetic visual interface tailored to user behavior patterns.">
             Explore Architecture Details &rarr;
           </button>
         </div>
@@ -905,11 +909,11 @@
 <!-- Artifact 4: NYC Traffic Safety Database  -->
       <div class="project-card" data-category="data">
         <div class="project-header-banner">
-            <i class="fa fa-taxi" aria-hidden="true"></i>
+          🚦
           <span class="project-badge">Group Project</span>
         </div>
         <div class="project-info">
-          <h3 class="project-title">NYC Traffic Safety Database</h3>
+          <h3 class="project-title">Class Project: NYC Traffic Safety Database</h3>
           <p class="project-desc">
             A comprehensive database solution for tracking and analyzing NYC traffic safety incidents, providing valuable insights for urban planning and public safety initiatives.
           </p>
@@ -926,26 +930,12 @@
             <span class="tag">Urban Planning</span>
           </div>
           <button class="project-link open-modal" 
-                  data-title="NYC Traffic Safety Database"
+                  data-title="Class Project: NYC Traffic Safety Database"
                   data-details="Designed and modeled a relational database in MySQL using NYPD Motor Vehicle Collision data to isolate traffic safety patterns, pre-crash scenarios, and contributing factors. Mapped system entities using custom ERDs, defined normalized relational schemas, and established foreign key constraints across tables including accident_damage, vehicle_info, driver_information, and collision_details. Documented transparent sample boundaries and data fair-use guidelines to enable transportation planners to query safety insights responsibly.">
             Explore Architecture Details &rarr;
           </button>
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </div>
@@ -1029,10 +1019,10 @@
     </div>
   </section>
 
-  <!-- SKILLS SECTION -->
+<!-- SKILLS SECTION -->
   <section id="skills" class="container">
     <h2 class="section-title">Technical Skillset</h2>
-    <p class="section-subtitle">Database, Cloud Architecture, Analytics, and UX Design toolkits.</p>
+    <p class="section-subtitle">Database, Cloud Architecture, Analytics, UX Design toolkits, and Soft Skills.</p>
 
     <div class="skills-grid">
       <div class="skill-card">
@@ -1076,6 +1066,17 @@
           <span class="skill-mini-tag">Systems Analysis</span>
           <span class="skill-mini-tag">Statistical Analysis</span>
           <span class="skill-mini-tag">Figma Prototyping</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-title">😎 Soft Skills</div>
+        <div class="skill-tags-list">
+          <span class="skill-mini-tag">Leadership</span>
+          <span class="skill-mini-tag">Team Collaboration</span>
+          <span class="skill-mini-tag">Problem Solving</span>
+          <span class="skill-mini-tag">Time Management</span>
+          <span class="skill-mini-tag">Adaptability</span>
         </div>
       </div>
     </div>

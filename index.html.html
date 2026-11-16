@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emi-Noel Epolle-Njabe | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. COLOR PALETTE & CSS VARIABLES (LIGHT NUDE / BEIGE + PINK ACCENTS)
+       ========================================================================== */
+    :root {
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* Nude / Beige Light Palette */
+      --bg-body: #fdfbf7;              /* Warm light nude/beige */
+      --bg-surface: #faf6f0;           /* Soft cream surface */
+      --bg-surface-elevated: #f3ece1;  /* Slightly deeper nude container */
+      --bg-glass: rgba(253, 251, 247, 0.88);
+      
+      --border-color: #eadecf;
+      --border-hover: #db7093;
+
+      --text-main: #2d2424;            /* Soft warm charcoal */
+      --text-muted: #7a6e6b;           /* Warm muted brown/gray */
+      --text-inverse: #ffffff;
+
+      /* Pink Accents: PaleVioletRed (#DB7093) & Thistle (#D8BFD8) */
+      --primary: #db7093;              /* PaleVioletRed */
+      --primary-hover: #c75b7e;
+      --primary-light: rgba(219, 112, 147, 0.12);
+      
+      --accent-thistle: #d8bfd8;       /* Thistle */
+      --accent-gradient: linear-gradient(135deg, #db7093 0%, #d8bfd8 100%);
+      
+      --shadow-sm: 0 4px 12px rgba(122, 110, 107, 0.05);
+      --shadow-lg: 0 20px 25px -5px rgba(219, 112, 147, 0.12), 0 8px 10px -6px rgba(122, 110, 107, 0.04);
+    }
+
+    /* ==========================================================================
+       2. BASE RESET
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5.5rem 0;
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4.5rem;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .logo-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION
+       ========================================================================== */
+    .hero {
+      padding-top: 9.5rem;
+      padding-bottom: 5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      background: var(--primary-light);
+      border: 1px solid rgba(219, 112, 147, 0.3);
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title {
+      font-size: 3.1rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .serif-accent {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--primary);
+      font-weight: 400;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(219, 112, 147, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .hero-image-card {
+      width: 310px;
+      height: 370px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-avatar-placeholder {
+      width: 100px;
+      height: 100px;
+      background: var(--accent-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 20px rgba(219, 112, 147, 0.25);
+    }
+
+    .hero-card-name {
+      font-weight: 800;
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-card-sub {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       5. SECTION HEADINGS & STATS
+       ========================================================================== */
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       6. PROJECTS SECTION & GALLERY
+       ========================================================================== */
+    .filter-buttons {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-header-banner {
+      height: 180px;
+      background: linear-gradient(135deg, rgba(219, 112, 147, 0.15) 0%, rgba(216, 191, 216, 0.25) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      border-bottom: 1px solid var(--border-color);
+      position: relative;
+    }
+
+    .project-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .project-info {
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+      flex-grow: 1;
+    }
+
+    .project-bullet-highlights {
+      list-style: none;
+      margin-bottom: 1.25rem;
+      padding: 0;
+    }
+
+    .project-bullet-highlights li {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      margin-bottom: 0.4rem;
+      position: relative;
+      padding-left: 1.2rem;
+    }
+
+    .project-bullet-highlights li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-size: 0.75rem;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      color: var(--primary);
+    }
+
+    .project-link {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap var(--transition-fast);
+      align-self: flex-start;
+    }
+
+    .project-link:hover {
+      gap: 0.6rem;
+    }
+
+    /* ==========================================================================
+       7. RESUME SECTION
+       ========================================================================== */
+    .resume-section-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+
+    .resume-column-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--primary);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--border-color);
+      margin-bottom: 1.75rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    .timeline-role {
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .timeline-org {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .skill-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: all var(--transition-fast);
+    }
+
+    .skill-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .skill-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-mini-tag {
+      font-size: 0.78rem;
+      background: var(--bg-surface-elevated);
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       8. MODAL WINDOW
+       ========================================================================== */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(45, 36, 36, 0.45);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      max-width: 680px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 2.25rem;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      font-size: 1.6rem;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .modal-close:hover {
+      color: var(--primary);
+    }
+
+    /* ==========================================================================
+       9. CONTACT SECTION & FORM FEEDBACK
+       ========================================================================== */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .form-control {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color var(--transition-fast);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-status {
+      display: none;
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(219, 112, 147, 0.15);
+      color: var(--primary-hover);
+      border: 1px solid var(--primary);
+    }
+
+    .form-status.error {
+      display: block;
+      background: #fde8e8;
+      color: #9b1c1c;
+      border: 1px solid #f8b4b4;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2.5rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ==========================================================================
+       10. MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 868px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 7.5rem;
+        text-align: center;
+      }
+      .hero-description {
+        margin: 0 auto 2rem auto;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .stats-grid, .resume-grid, .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        Emi-Noel Epolle-Njabe
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="container hero">
+    <div class="hero-text">
+      <div class="hero-badge">✨ Information Science Senior @ UMD • GPA 4.0</div>
+      <h1 class="hero-title">
+        Bridging data insights with <span class="serif-accent">unique UX/UI design.</span>
+      </h1>
+      <p class="hero-description">
+        Hi! I'm Emi-Noel Epolle-Njabe, an Information Science student and AWS Certified Cloud Practitioner. I specialize in finding pattern anomalies in data and building human centered, UX/UI interfaces to solve real world system challenges.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#resume" class="btn btn-secondary">Explore Resume</a>
+      </div>
+    </div>
+
+    <div class="hero-image-wrapper">
+      <div class="hero-image-card">
+        <div class="hero-avatar-placeholder">🌸</div>
+        <div class="hero-card-name">Emi-Noel Epolle-Njabe</div>
+        <div class="hero-card-sub">Aspiring Data Analyst & UX Designer </div>
+        <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--primary); font-weight: 700;">AWS Certified Cloud Practitioner</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT & STATS -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <p style="color: var(--text-muted); max-width: 840px; font-size: 1.05rem; line-height: 1.8;">
+       An Information Science senior at the University of Maryland (GPA 4.0) and a AWS Certified Cloud Practitioner, my passion is a combination of Data Analytics and UX/UI Design. I love working with complex datasets to discover hidden patterns, simplify workflows, and translate raw data into clean, interactive visual dashboards and unique digital user interfaces.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" data-target="4">0.0</div>
+        <div class="stat-label">Cumulative GPA</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" data-target="1">0</div>
+        <div class="stat-label">Certifications</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS DISPLAY SECTION -->
+  <section id="projects" class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="data">Data Pipelines & Cloud</button>
+      <button class="filter-btn" data-filter="ux">UX & Interface Design</button>
+    </div>
+
+    <div class="projects-grid">
+      
+      <!-- Artifact 1: RF Signal Monitoring Dashboard -->
+      <div class="project-card" data-category="data">
+        <div class="project-header-banner">
+          📡
+          <span class="project-badge">AWS Cloud Project</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">RF Signal Monitoring Dashboard</h3>
+          <p class="project-desc">
+            Automated cloud ETL solution that processes complex telecommunications logs to uncover signal drop patterns and evaluate critical network performance.
+          </p>
+          <ul class="project-bullet-highlights">
+            <li>Structured raw telecommunication CSV logs via AWS S3 & Glue Crawlers</li>
+            <li>Queried Athena SQL to isolate weak coverage areas & degradation patterns</li>
+            <li>Built interactive QuickSight visualization dashboard for stakeholders</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">AWS S3</span>
+            <span class="tag">AWS Glue</span>
+            <span class="tag">Amazon Athena</span>
+            <span class="tag">Amazon QuickSight</span>
+            <span class="tag">SQL</span>
+          </div>
+          <button class="project-link open-modal" 
+                  data-title="RF Signal MonitoringDashboard" 
+                  data-details="Engineered an end-to-end cloud diagnostics pipeline to evaluate public safety radio network reliability. By setting up automated schema crawlers with AWS Glue and running targeted Athena SQL queries on S3 logs, I identified pattern drop-offs in RF signal strength and audio quality (DAQ). Visualized findings in QuickSight for key stakeholders to optimize emergency network operations.">
+            Explore Architecture Details &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Artifact 2: Maryland Transfer Analytics Pipeline -->
+      <div class="project-card" data-category="data">
+        <div class="project-header-banner">
+          🎓
+          <span class="project-badge">ETL Pipeline</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">Maryland Higher Education Transfer Analytics Pipeline</h3>
+          <p class="project-desc">
+            Automated cloud data pipeline built to ingest, clean, normalize, and analyze state-level higher education transfer student metrics.
+          </p>
+          <ul class="project-bullet-highlights">
+            <li>Ingested and standardized raw USM IRIS export datasets using Python Pandas</li>
+            <li>Architected relational database schema in AWS RDS PostgreSQL</li>
+            <li>Enabled geospatial analytics and relational SQL querying across MD higher ed</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">AWS RDS</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Relational Design</span>
+          </div>
+          <button class="project-link open-modal" 
+                  data-title="Maryland Higher Education Transfer Analytics Pipeline" 
+                  data-details="Designed a scalable cloud data processing architecture to track student transfer patterns across Maryland institutions. Wrote robust Python Pandas scripts for automated schema standardization, missing value handling, and normalization. Transformed disorganized data into structured RDS PostgreSQL tables, facilitating advanced relational queries and regional demographic insights.">
+            Explore Architecture Details &rarr;
+          </button>
+        </div>
+      </div>
+
+      <!-- Artifact 3: Unique User-Centered System Design -->
+      <div class="project-card" data-category="ux">
+        <div class="project-header-banner">
+          🎨
+          <span class="project-badge">UX/UI Design</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">User Centered Interactive System Design</h3>
+          <p class="project-desc">
+            Comprehensive UX design project focused on user research, task-flow pattern analysis, and creating unique interface design systems.
+          </p>
+          <ul class="project-bullet-highlights">
+            <li>Conducted user friction research to identify usability pain points</li>
+            <li>Designed low to high fidelity interactive wireframes and prototypes</li>
+            <li>Created custom nude/pink aesthetic visual design systems in Figma</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">UX Architecture</span>
+            <span class="tag">Figma</span>
+            <span class="tag">Usability Testing</span>
+            <span class="tag">Prototyping</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+          <button class="project-link open-modal" 
+                  data-title="User-Centered Interactive System Design" 
+                  data-details="Focused on transforming complex system data into user friendly digital experiences. Applied User Centered Design (UCD) methodologies—including persona creation, journey mapping, and wireframing to eliminate usability roadblocks and deliver a streamlined, aesthetic visual interface tailored to user behavior patterns.">
+            Explore Architecture Details &rarr;
+          </button>
+        </div>
+      </div>
+
+
+<!-- Artifact 4: NYC Traffic Safety Database  -->
+      <div class="project-card" data-category="data">
+        <div class="project-header-banner">
+            <i class="fa fa-taxi" aria-hidden="true"></i>
+          <span class="project-badge">Group Project</span>
+        </div>
+        <div class="project-info">
+          <h3 class="project-title">NYC Traffic Safety Database</h3>
+          <p class="project-desc">
+            A comprehensive database solution for tracking and analyzing NYC traffic safety incidents, providing valuable insights for urban planning and public safety initiatives.
+          </p>
+          <ul class="project-bullet-highlights">
+            <li>Collected and structured traffic incident data from multiple sources</li>
+            <li>Implemented SQL queries to identify patterns and trends in traffic safety</li>
+            <li>Developed interactive dashboards for stakeholders to visualize key metrics</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">SQL</span>
+            <span class="tag">Data Analysis</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Public Safety</span>
+            <span class="tag">Urban Planning</span>
+          </div>
+          <button class="project-link open-modal" 
+                  data-title="NYC Traffic Safety Database"
+                  data-details="Designed and modeled a relational database in MySQL using NYPD Motor Vehicle Collision data to isolate traffic safety patterns, pre-crash scenarios, and contributing factors. Mapped system entities using custom ERDs, defined normalized relational schemas, and established foreign key constraints across tables including accident_damage, vehicle_info, driver_information, and collision_details. Documented transparent sample boundaries and data fair-use guidelines to enable transportation planners to query safety insights responsibly.">
+            Explore Architecture Details &rarr;
+          </button>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </section>
+
+  <!-- RESUME SHOWCASE SECTION -->
+  <section id="resume" class="container">
+    <div class="resume-section-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.25rem;">Resume</h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Academic achievements, technical experience, and leadership.</p>
+        </div>
+        <button class="btn btn-primary open-modal" data-title="Emi-Noel Epolle-Njabe - Full Resume" data-details="Contact: eepollenjabe@gmail.com | (302)-367-5018 | College Park, MD">
+          📄 Quick View Contact & Bio
+        </button>
+      </div>
+
+      <div class="resume-grid">
+        <!-- Education & Credentials -->
+        <div>
+          <div class="resume-column-title">🎓 Education & Certifications</div>
+          
+          <div class="timeline-item">
+            <div class="timeline-date">MAY 2026 – MAY 2027</div>
+            <div class="timeline-role">AWS Certified Cloud Practitioner</div>
+            <div class="timeline-org">Amazon Web Services (AWS)</div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">JAN 2026 – May 2027</div>
+            <div class="timeline-role">B.S. in Information Science (GPA 4.0)</div>
+            <div class="timeline-org">University of Maryland, College Park</div>
+            <div class="timeline-desc">
+              Coursework: Object-Oriented Programming, Database Design & Modeling, Statistics, User-Centered System Design, Dynamic Web Applications.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">AUG 2022 – MAY 2024</div>
+            <div class="timeline-role">A.A.S. in Computer Engineering (GPA 3.6)</div>
+            <div class="timeline-org">Prince George's Community College</div>
+            <div class="timeline-desc">
+              Coursework: AWS Cloud Computing, IoT Fundamentals, Digital Circuits, Systems Analysis & Project Management.
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience & Leadership -->
+        <div>
+          <div class="resume-column-title">💼 Technical & Leadership Experience</div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">MAR 2025 – AUG 2025</div>
+            <div class="timeline-role">RF Field Intern</div>
+            <div class="timeline-org">SBP Consulting</div>
+            <div class="timeline-desc">
+              Performed RF signal and DAQ testing for emergency service radio networks using Motorola Voyager systems. Tested interference under dynamic drive testing conditions.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">AUG 2025 – AUG 2026</div>
+            <div class="timeline-role">Assistant Manager</div>
+            <div class="timeline-org">Ross Stores</div>
+            <div class="timeline-desc">
+              Supervised 5-10 associates daily; improved cashier performance metrics from 70% to 104% through coaching and targeted operational tracking.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-date">JAN 2023 – MAY 2024</div>
+            <div class="timeline-role">Treasurer</div>
+            <div class="timeline-org">Girls Who Code (PGCC)</div>
+            <div class="timeline-desc">
+              Managed $2,000+ club budget, pitched executive board for hackathon funding, and empowered underrepresented groups in tech.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="container">
+    <h2 class="section-title">Technical Skillset</h2>
+    <p class="section-subtitle">Database, Cloud Architecture, Analytics, and UX Design toolkits.</p>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-title">🗄️ Database & SQL</div>
+        <div class="skill-tags-list">
+          <span class="skill-mini-tag">RDS Design</span>
+          <span class="skill-mini-tag">SQL Querying</span>
+          <span class="skill-mini-tag">Schema Normalization</span>
+          <span class="skill-mini-tag">ERD Diagramming</span>
+          <span class="skill-mini-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-title">☁️ AWS & Cloud Tools</div>
+        <div class="skill-tags-list">
+          <span class="skill-mini-tag">AWS Glue</span>
+          <span class="skill-mini-tag">Amazon Athena</span>
+          <span class="skill-mini-tag">Amazon QuickSight</span>
+          <span class="skill-mini-tag">Amazon S3</span>
+          <span class="skill-mini-tag">AWS Lambda</span>
+          <span class="skill-mini-tag">Cloud ETL Architecture</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-title">💻 Programming & Web</div>
+        <div class="skill-tags-list">
+          <span class="skill-mini-tag">Python (Pandas, OOP)</span>
+          <span class="skill-mini-tag">HTML5 / Modern CSS</span>
+          <span class="skill-mini-tag">Logic & Algorithms</span>
+          <span class="skill-mini-tag">Web Applications</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-title">✨ UX & Core Competencies</div>
+        <div class="skill-tags-list">
+          <span class="skill-mini-tag">User Experience (UX) Architecture</span>
+          <span class="skill-mini-tag">User Centered Design</span>
+          <span class="skill-mini-tag">Systems Analysis</span>
+          <span class="skill-mini-tag">Statistical Analysis</span>
+          <span class="skill-mini-tag">Figma Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION (INTEGRATED WITH WEB3FORMS) -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-subtitle">Interested in collaborating or discussing Data Analytics & UX Design? Reach out!</p>
+
+    <div class="contact-wrapper">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Web3Forms API Access Key -->
+        <input type="hidden" name="access_key" value=eb881bcc-2109-45b2-931a-e6ed0788447b>
+        <input type="hidden" name="subject" value="New Portfolio Contact Form Submission">
+        <input type="hidden" name="from_name" value="Portfolio Visitor">
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-control" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tell me about your project or opportunity..." required></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="btn btn-primary">Send Message</button>
+        <div id="formStatus" class="form-status"></div>
+      </form>
+
+      <div>
+        <h3 style="margin-bottom: 1.25rem;">Contact Information</h3>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7;">
+          I am currently seeking intern and entry-level opportunities in Data Analytics, Technical Analysis, or Information Systems.
+        </p>
+        <p style="margin-bottom: 0.75rem;"><strong>Name:</strong> Emi-Noel Epolle-Njabe</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Email:</strong> eepollenjabe@gmail.com</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Phone:</strong> (302)-367-5018</p>
+        <p style="margin-bottom: 0.75rem;"><strong>Location:</strong> College Park, MD</p>
+        <p style="margin-bottom: 0.75rem;"><strong>LinkedIn:</strong> linkedin.com/in/enen186</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL WINDOW -->
+  <div class="modal" id="infoModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <h3 id="modalTitle" style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-main);"></h3>
+      <p id="modalDesc" style="color: var(--text-muted); line-height: 1.8; white-space: pre-line;"></p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Emi-Noel Epolle-Njabe. Built with HTML, CSS & JS.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // 1. Animated Counter Numbers
+    const stats = document.querySelectorAll('.stat-number');
+    let hasAnimated = false;
+
+    window.addEventListener('scroll', () => {
+      const sectionPos = document.getElementById('about').getBoundingClientRect().top;
+      const screenPos = window.innerHeight;
+
+      if (sectionPos < screenPos && !hasAnimated) {
+        hasAnimated = true;
+        stats.forEach(stat => {
+          const target = +stat.getAttribute('data-target');
+          let count = 0;
+          const isDecimal = target === 4;
+          const speed = target / 30;
+
+          const updateCount = () => {
+            count += speed;
+            if (count < target) {
+              stat.innerText = isDecimal ? count.toFixed(1) : Math.ceil(count);
+              setTimeout(updateCount, 40);
+            } else {
+              stat.innerText = isDecimal ? target.toFixed(1) : target;
+            }
+          };
+          updateCount();
+        });
+      }
+    });
+
+    // 2. Project Filter Gallery
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 3. Dynamic Modal Handler
+    const modal = document.getElementById('infoModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.open-modal').forEach(button => {
+      button.addEventListener('click', () => {
+        modalTitle.textContent = button.getAttribute('data-title');
+        modalDesc.textContent = button.getAttribute('data-details') || button.getAttribute('data-desc');
+        modal.classList.add('active');
+      });
+    });
+
+    modalClose.addEventListener('click', () => modal.classList.remove('active'));
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // 4. Asynchronous Contact Form Submission (Web3Forms API)
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formStatus = document.getElementById('formStatus');
+
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Sending...';
+      formStatus.className = 'form-status';
+      formStatus.style.display = 'none';
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          formStatus.className = 'form-status success';
+          formStatus.innerText = '✨ Thank you! Your message has been sent successfully.';
+          contactForm.reset();
+        } else {
+          formStatus.className = 'form-status error';
+          formStatus.innerText = 'Oops! Something went wrong. Please check your Web3Forms access key.';
+        }
+      } catch (error) {
+        formStatus.className = 'form-status error';
+        formStatus.innerText = 'Unable to send message right now. Please email eepollenjabe@gmail.com directly.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Send Message';
+      }
+    });
+  </script>
+</body>
+</html>
